@@ -23,6 +23,11 @@
             label="姓名">
           </el-table-column>
           <el-table-column
+            prop="sex"
+            align="center"
+            label="性别">
+          </el-table-column>
+          <el-table-column
             prop="contactPhone"
             align="center"
             label="手机号">
