@@ -148,13 +148,13 @@ export default {
   methods: {
     add () {
       this.dialogFormVisible1 = false
-      axios.post('http://localhost:8081/contact', JSON.stringify(this.newdata)).then(() => {
+      axios.post('http://101.34.24.163:8081/contact', JSON.stringify(this.newdata)).then(() => {
         this.getData()
       })
     },
     change (index) {
       this.dialogFormVisible = false
-      axios.put('http://localhost:8081/contact', JSON.stringify(this.tableData[index]))
+      axios.put('http://101.34.24.163:8081/contact', JSON.stringify(this.tableData[index]))
     },
     open (index) {
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
@@ -162,7 +162,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(async () => {
-        await axios.delete(`http://localhost:8081/contact/${this.tableData[index].contactId}`)
+        await axios.delete(`http://101.34.24.163:8081/contact/${this.tableData[index].contactId}`)
         this.tableData.splice(index, 1)
         this.$message({
           type: 'success',
@@ -182,7 +182,7 @@ export default {
       this.dialogFormVisible = true
     },
     getData () {
-      axios.get('http://localhost:8081/contact').then(res => {
+      axios.get('http://101.34.24.163:8081/contact').then(res => {
         this.tableData = res.data.data
       })
     }
