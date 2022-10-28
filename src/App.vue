@@ -40,6 +40,7 @@
           <el-table-column label="操作" align="center">
             <template slot="header">
               <el-button @click="dialogFormVisible1 = true" size="small">新增联系人</el-button>
+              <el-button @click="getData" size="small">刷新数据</el-button>
             </template>
             <template scope="scope">
               <el-button
