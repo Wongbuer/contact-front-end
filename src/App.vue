@@ -218,7 +218,7 @@ export default {
   line-height: 100px;
 
   h1 {
-    color: #bdb2b2;
+    color: #ebeee8;
   }
 }
 
