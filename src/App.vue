@@ -148,13 +148,21 @@ export default {
   methods: {
     add () {
       this.dialogFormVisible1 = false
-      axios.post('http://101.34.24.163:8081/contact', JSON.stringify(this.newdata)).then(() => {
+      axios.post('http://101.34.24.163:8081/contact', JSON.stringify(this.newdata), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(() => {
         this.getData()
       })
     },
     change (index) {
       this.dialogFormVisible = false
-      axios.put('http://101.34.24.163:8081/contact', JSON.stringify(this.tableData[index]))
+      axios.put('http://101.34.24.163:8081/contact', JSON.stringify(this.tableData[index]), {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
     },
     open (index) {
       this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
